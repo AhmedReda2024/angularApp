@@ -62,9 +62,10 @@ export const routes: Routes = [
     component: ProductsComponent,
     title: 'Products',
   },
+  { path: 'not-found', component: NotFoundComponent, title: 'error' },
   {
     path: '**',
-    component: NotFoundComponent,
-    title: 'Not Found',
+    redirectTo: 'not-found',
+    pathMatch: 'full',
   },
 ];

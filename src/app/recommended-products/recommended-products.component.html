@@ -1,0 +1,26 @@
+<section class="py-4">
+  <div class="container py-4">
+    <div class="row g-4">
+      @for (item of recommendProductsList; track $index) {
+      <div class="col-md-3">
+        <div class="card">
+          <img
+            class="card-img-top"
+            [src]="item.imageCover"
+            [alt]="item.title"
+          />
+          <div class="card-body">
+            <h4 class="card-title fs-5">{{ item.title }}</h4>
+            <p class="card-text small">{{ item.description }}</p>
+            <div class="d-flex justify-content-between">
+              <h5>Price: {{ item.price }}</h5>
+              <h5>Quantity: {{ item.quantity }}</h5>
+            </div>
+            <h6>onSale: {{ item.onSale }}</h6>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

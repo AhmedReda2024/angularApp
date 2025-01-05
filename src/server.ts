@@ -23,6 +23,9 @@ const commonEngine = new CommonEngine();
  * });
  * ```
  */
+app.get('*', (req, res) => {
+  res.render('index', { req });
+});
 
 /**
  * Serve static files from /browser
@@ -31,8 +34,8 @@ app.get(
   '**',
   express.static(browserDistFolder, {
     maxAge: '1y',
-    index: 'index.html'
-  }),
+    index: 'index.html',
+  })
 );
 
 /**
